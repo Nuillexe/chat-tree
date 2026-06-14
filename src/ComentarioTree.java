@@ -1,3 +1,4 @@
+import java.util.LinkedList;
 import java.util.List;
 
 class ComentarioTree {
@@ -23,6 +24,11 @@ class ComentarioTree {
     public int contarComentarios();
 
     public String gerarArvoreTexto();
+
+    public LinkedList<Comentario> comentariosDoAutor(String nomeDoAutor){
+
+
+    }
 }
 
 /*

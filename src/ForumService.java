@@ -19,6 +19,8 @@ public class ForumService {
 
     public int lerId(Scanner sc);
 
+
+
 }
 
 /*

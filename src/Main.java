@@ -1,3 +1,4 @@
+import java.util.InputMismatchException;
 import java.util.Scanner;
 
 //TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
@@ -11,7 +12,7 @@ public class Main {
         ComentarioTree ct= new ComentarioTree();
         ForumService s= new ForumService(ct);
         Comentario comentarioAtual= ct.getRaiz();
-        while(true){
+        while(comentarioAtual!=null){
 
             UI.exibirComentario(comentarioAtual);
 
@@ -31,14 +32,18 @@ public class Main {
                     //comentarioAtual =s.deletarComentarioAtual(comentarioAtual);
                     break;
 
-                case "V":
+                case "VER":
+                    try {
+                        //int id =s.lerId(scanner);
+                        //destino = ct.buscarPorID(id);
 
-                    //int id =s.lerId(scanner);
+                        if (destino != null)
+                            comentarioAtual = destino;
+                    }catch( IllegalArgumentException e){
 
-                    //Comentario destino = comentarioAtual.buscarFilho(id);
+                    }catch( InputMismatchException e){
 
-                    if(destino != null)
-                        comentarioAtual = destino;
+                    }
 
                     break;
 
@@ -60,6 +65,19 @@ public class Main {
                 case "M":
                     UI.exibirMenu();
                     break;
+
+                case "U":
+                    UI.exibirComentario(s.comentariosDoAutor());
+                    break;
+                case "VI":
+
+                    break;
+
+                case "S":
+
+                    break;
+                default:
+
 
             }
 
