@@ -23,7 +23,16 @@ class ComentarioTree {
     public int contarComentarios();
 
     public String gerarArvoreTexto();
-}
+
+   //adicionado por kaique
+
+    public int contarComentarios();
+
+    private int contarContagemRecursiva(Comentario atual);
+
+    public int contarComentariosPorAutor(String autor);
+
+    private int contarPorAutorRecursivo(Comentario atual, String autor);
 
 /*
 * Responsabilidades
