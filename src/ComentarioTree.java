@@ -11,11 +11,39 @@ class ComentarioTree {
 
     public Comentario getRaiz();
 
-    public Comentario adicionarComentario(String autor, String texto, Comentario pai);
+    public Comentario adicionarComentario(String autor, String texto, Comentario pai) {
+        Comentario novoComentario = new Comentario(autor, texto, pai);
+        if(pai != null) {
+            pai.getRespostas().add(novoComentario);
+        }
+        return novoComentario;
+    }
 
     public void removerComentario(Comentario comentario);
 
-    public Comentario buscarPorId(int id);
+    public Comentario buscarPorId(int id) {
+        return buscarRecursivo(raiz, id);
+    }
+
+    private Comentario buscarRecursivo(Comentario atual,int id) {
+        if(atual == null) {
+            return null;
+        }
+    
+        if(atual.getId() == id) {
+            return atual;
+        }
+
+        for(Comentario filho : atual.getRespostas()){
+            Comentario encontrado = buscarRecursivo(filho, id);
+
+            if(encontrado != null) {
+                return encontrado;
+            }  
+        }
+        return null;
+    }
+
 
     public String obterCaminho(Comentario comentario);
 
