@@ -45,9 +45,16 @@ public class Comentario {
     }
 
     @Override
-    public String toString(){
-        return String.format("[ID: %d] %s: \\\"%s\\\"%n\",\n" +
-                "                        filho.getId(), filho.getAutor(),\n" +
-                "                        filho.getTexto().length() > 30 ? filho.getTexto().substring(0, 30) + \"...\" : filho.getTexto()");
+    public String toString() {
+        String textoResumido = texto.length() > 30
+                ? texto.substring(0, 30) + "..."
+                : texto;
+
+        return String.format(
+                "[ID: %d] %s: \"%s\"",
+                id,
+                autor,
+                textoResumido
+        );
     }
 }

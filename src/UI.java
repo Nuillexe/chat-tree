@@ -38,9 +38,7 @@ public class UI {
         if (raiz.getQuantidadeRespostas() > 0) {
             System.out.println("Comentarios :");
             for (Comentario filho : raiz.getRespostas()) {
-                System.out.printf("  -> [ID: %d] %s: \"%s\"%n",
-                        filho.getId(), filho.getAutor(),
-                        filho.getTexto().length() > 30 ? filho.getTexto().substring(0, 30) + "..." : filho.getTexto());
+                System.out.println("  -> " + filho);
             }
             System.out.println("=============================================================");
         }
