@@ -82,3 +82,8 @@ Ponto de entrada da aplicação.
 * Desenvolvedor 4
 * Desenvolvedor 5
 * Desenvolvedor 6
+
+
+##Novas tarefas:
+* Kaique: Atualizar menu, com base no swicth da main
+  
