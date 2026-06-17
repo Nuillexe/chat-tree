@@ -91,6 +91,7 @@ public class UI {
         System.out.println("E - Editar comentário");
         System.out.println("V - Visitar comentário filho");
         System.out.println("B - Voltar ao comentário pai");
+        System.out.println("B0 - Voltar para o inicio");
         System.out.println("F - Mostrar folhas");
         System.out.println("A - Mostrar árvore completa");
         System.out.println("U - Mostrar total de comentários de um usuário");
@@ -103,8 +104,8 @@ public class UI {
         imprimirLinhaSeparadora();
         System.out.println("    SISTEMA DE FÓRUM EM ÁRVORE (DISCUSSÃO ENCADEADA)         ");
         imprimirLinhaSeparadora();
-        System.out.println("Bem-vindo! Este sistema permite organizar discussões em formato " +
-                "hierárquico. Você pode responder a comentários específicos, " +
+        System.out.println("Bem-vindo! Este sistema permite organizar discussões em \nformato " +
+                "hierárquico. Você pode responder a comentários específicos,\n" +
                 "navegar entre discussões e visualizar a árvore.");
         imprimirLinhaSeparadora();
 
