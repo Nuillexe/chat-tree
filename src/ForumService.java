@@ -141,7 +141,7 @@ public class ForumService {
     public String lerComando(Scanner sc) {
 
         while (true) {
-
+            System.out.println("Digite M caso precise rever o menu de comandos");
             System.out.print("Comando: ");
             String cmd = sc.nextLine().trim().toUpperCase();
 

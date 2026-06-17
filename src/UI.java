@@ -94,7 +94,7 @@ public class UI {
         System.out.println("F - Mostrar folhas");
         System.out.println("A - Mostrar árvore completa");
         System.out.println("U - Mostrar total de comentários de um usuário");
-
+        System.out.println("S - Para encerrar o forum");
         System.out.println("M - Mostrar menu");
         imprimirLinhaSeparadora();
     }
