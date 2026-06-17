@@ -12,12 +12,20 @@ public class UI {
         System.out.printf("N° de Respostas: %d%n", comentario.getQuantidadeRespostas());
 
         System.out.println("=============================================================");
-        System.out.println("Respostas:");
+
         mostrarRespostas(comentario,"     ");
 
     }
 
-    private static void mostrarRespostas(Comentario comentario, String espaco){
+    private static void mostrarRespostas(Comentario c, String espaco){
+        if(c.getQuantidadeRespostas()>0){
+            listarRespostas(c, espaco);
+        }else{
+            System.out.println("--Não há comentarios--");
+        }
+    }
+
+    private static void listarRespostas(Comentario comentario, String espaco){
         if(comentario.getQuantidadeRespostas()>0){
             for (int i = 0; i < comentario.getRespostas().size(); i++) {
                 Comentario filho = comentario.getRespostas().get(i);
@@ -34,6 +42,7 @@ public class UI {
                 }
             }
         }
+        System.out.println();
     }
 
     public static void exibirConvrsaPrincipal(ComentarioTree ct){
@@ -43,7 +52,7 @@ public class UI {
         System.out.println("=============================================================");
         System.out.printf("N° de Comentarios: %d%n", raiz.getQuantidadeRespostas());
 
-        System.out.println("Comentarios :");
+        System.out.println(raiz.getTexto());
         mostrarRespostas(raiz,"     ");
 
     }

@@ -6,7 +6,7 @@ class ComentarioTree {
     private Comentario raiz;
 
     public ComentarioTree(){
-        raiz = new Comentario("", "==CONVERSA PRINCIPAL==", null);
+        raiz = new Comentario("", "FORUM", null);
     }
 
     public Comentario getRaiz() {
@@ -59,7 +59,7 @@ class ComentarioTree {
 
     public String obterCaminho(Comentario comentario) {
         if (comentario.getPai() == null) {
-            return "==CONVERSA PRINCIPAL ";
+            return "FORUM";
         }
 
         return obterCaminho(comentario.getPai())

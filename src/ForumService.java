@@ -133,7 +133,7 @@ public class ForumService {
     public String lerComando(Scanner sc) {
 
         while (true) {
-
+            System.out.print("Comando: ");
             String cmd = sc.nextLine().trim().toUpperCase();
 
             switch (cmd) {
@@ -145,6 +145,8 @@ public class ForumService {
                 case "F":
                 case "A":
                 case "M":
+                case "U":
+                case "B0":
                     return cmd;
 
                 default:
