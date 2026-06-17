@@ -57,16 +57,46 @@ class ComentarioTree {
         return null;
     }
 
-    public String obterCaminho(Comentario comentario){
-        if(comentario.getPai()==null){
-            return "DUSCUSSÃO";
+    public String obterCaminho(Comentario comentario) {
+        if (comentario.getPai() == null) {
+            return "==CONVERSA PRINCIPAL==";
         }
+
         return obterCaminho(comentario.getPai())
                 + " > "
-                + comentario.getId();
+                + comentario.getId()
+                + " (" + comentario.getAutor() + ")";
     }
 
 
+    public LinkedList<Comentario> comentariosDoAutor(String nomeDoAutor) {
+        LinkedList<Comentario> resultado = new LinkedList<>();
+        comentariosDoAutorRecursivo(raiz, nomeDoAutor, resultado);
+
+        if (resultado.isEmpty()) {
+            return null;
+        }
+
+        return resultado;
+    }
+
+    private void comentariosDoAutorRecursivo(
+            Comentario atual,
+            String nomeDoAutor,
+            LinkedList<Comentario> resultado) {
+
+        if (atual == null) {
+            return;
+        }
+
+        if (atual.getAutor().equalsIgnoreCase(nomeDoAutor)) {
+            resultado.add(atual);
+        }
+
+        for (Comentario filho : atual.getRespostas()) {
+            comentariosDoAutorRecursivo(filho, nomeDoAutor, resultado);
+        }
+    }
    /* public List<Comentario> listarFolhas();
 
     public int contarComentarios();
