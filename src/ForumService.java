@@ -1,6 +1,5 @@
 import java.util.Scanner;
 
-
 /**
  * Camada de serviço do fórum.
  *
@@ -54,9 +53,16 @@ public class ForumService {
     /**
      * Permite alterar o texto de um comentário existente.
      *
+     * A raiz da discussão não pode ser editada.
+     *
      * @param comentario comentário a ser editado
      */
     public void editarComentario(Comentario comentario) {
+
+        if (comentario.getPai() == null) {
+            System.out.println("Não é possível editar a raiz da discussão.");
+            return;
+        }
 
         System.out.print("Novo texto: ");
         String novoTexto = sc.nextLine().trim();
@@ -118,14 +124,16 @@ public class ForumService {
      * Lê um comando do usuário e garante que ele seja válido.
      *
      * Comandos válidos:
-     * C - Criar comentário
-     * D - Deletar comentário
-     * E - Editar comentário
-     * V - Visitar comentário filho
-     * B - Voltar ao pai
-     * F - Mostrar folhas
-     * A - Mostrar árvore completa
-     * M - Mostrar menu
+     * C  - Criar comentário
+     * D  - Deletar comentário
+     * E  - Editar comentário
+     * V  - Visitar comentário filho
+     * B  - Voltar ao pai
+     * F  - Mostrar folhas
+     * A  - Mostrar árvore completa
+     * M  - Mostrar menu
+     * U  - Atualizar interface
+     * B0 - Voltar para a raiz
      *
      * @param sc scanner utilizado para leitura
      * @return comando validado
@@ -133,6 +141,7 @@ public class ForumService {
     public String lerComando(Scanner sc) {
 
         while (true) {
+
             System.out.print("Comando: ");
             String cmd = sc.nextLine().trim().toUpperCase();
 
@@ -153,8 +162,6 @@ public class ForumService {
                     System.out.println("Comando inválido.");
             }
         }
-
-
     }
 
     /**
@@ -168,14 +175,22 @@ public class ForumService {
         while (true) {
 
             try {
+                System.out.print("Digite o ID: ");
                 return Integer.parseInt(sc.nextLine().trim());
+
             } catch (NumberFormatException e) {
                 System.out.println("ID inválido. Digite um número inteiro.");
             }
         }
     }
 
+    /**
+     * Pausa a execução até que o usuário pressione ENTER.
+     *
+     * @param sc scanner utilizado para leitura
+     */
     public void pressionarEnterParaContinuar(Scanner sc) {
+
         System.out.println("\nPressione ENTER para continuar...");
         sc.nextLine();
     }
