@@ -58,9 +58,32 @@ public class UI {
     }
 
     public static void exibirComentariosDoAutor(String nome, LinkedList<Comentario> listaComentarios){
-        /*fazer algo semelhante a impressão de comentarios filhos. Fazer caso parametrro seja null e falar que esse
-        autor n existe*/
+        imprimirLinhaSeparadora();
+        System.out.printf("COMENTÁRIOS PUBLICADOS POR: %s%n", nome.toUpperCase());
+        imprimirLinhaSeparadora();
 
+        // Validação de lista nula
+        if (listaComentarios == null || listaComentarios.isEmpty()) {
+            System.out.printf("Erro: O autor '%s' não existe no sistema ou não possui comentários.%n", nome);
+            imprimirLinhaSeparadora();
+            return;
+        }
+
+        // Comentários encontrados
+        for (Comentario c : listaComentarios) {
+            System.out.printf("[ID: %d] Texto: %s%n", c.getId(), c.getTexto());
+
+            // Verifica se há um comentário pai
+            if (c.getPai() != null && c.getPai().getAutor() != null && !c.getPai().getAutor().isEmpty()) {
+                System.out.printf("  ↳ Em resposta a: %s (ID: %d)%n", c.getPai().getAutor(), c.getPai().getId());
+            } else if (c.getPai() != null) {
+                System.out.println("  ↳ Em resposta à raiz da discussão.");
+            }
+            imprimirLinhaSeparadora();
+        }
+
+        System.out.printf("Total de ocorrências encontradas: %d%n", listaComentarios.size());
+        imprimirLinhaSeparadora();
     }
 
     public static void exibirMenu(){
@@ -74,7 +97,6 @@ public class UI {
         System.out.println("B - Voltar ao comentário pai");
         System.out.println("F - Mostrar folhas");
         System.out.println("A - Mostrar árvore completa");
-        System.out.println("T - Mostrar quantidade total de comentários");
         System.out.println("U - Mostrar total de comentários de um usuário");
 
         System.out.println("M - Mostrar menu");
@@ -142,8 +164,8 @@ public class UI {
     }
 
     private static void listarRespostasDiretas(List<Comentario> respostas) {
-        for (Comentario filho : respostas) {
-            System.out.println("  -> " + filho);
+        for (Comentario child : respostas) {
+            System.out.println("  -> " + child);
         }
         imprimirLinhaSeparadora();
     }
