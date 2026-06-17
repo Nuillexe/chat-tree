@@ -1,3 +1,8 @@
+
+## Novas tarefas:
+* Kaique: Atualizar menu, com base no swicth da main, fazer metodo exibirLIstaDeComentariosDoAutor();
+* Charles: EditarComentario: Não permitir editar comentario raiz, em lerID(), colocar mengsaem: "Digitar Id". Em lerId é importante diferenciar se a pessoa digitou um id invalido por ser n numero inteiro ou, msm se for inteiro, ele n existir
+
 # Fórum de Comentários em Árvore
 
 Projeto desenvolvido para a disciplina de Estrutura de Dados.
@@ -75,20 +80,23 @@ Ponto de entrada da aplicação.
 | U | Exibir todos os comentários de um autor |
 | M | Exibir o menu de comandos |
 | S | Encerrar o sistema |
-## Equipe
-
-* Integrador/Scrum Master: Nome
-* Desenvolvedor 1
-* Desenvolvedor 2
-* Desenvolvedor 3
-* Desenvolvedor 4
-* Desenvolvedor 5
-* Desenvolvedor 6
 
 
-## Novas tarefas:
-* Kaique: Atualizar menu, com base no swicth da main, fazer metodo exibirLIstaDeComentariosDoAutor();
-* Charles: EditarComentario: Não permitir editar comentario raiz, em lerID(), colocar mengsaem: "Digitar Id". Em lerId é importante diferenciar se a pessoa digitou um id invalido por ser n numero inteiro ou, msm se for inteiro, ele n existir
+## Divisão de Responsabilidades
+
+| Integrante | Responsabilidades                                                                                   |
+| ---------- | --------------------------------------------------------------------------------------------------- |
+| Kaique     | Implementação da estrutura de árvore (`ComentarioTree`) e operações de manipulação dos comentários. |
+| Charles    | Desenvolvimento da classe `Comentario`, incluindo atributos e comportamentos básicos da entidade.   |
+| Ana Clara  | Implementação da camada de serviços (`ForumService`) e das regras de negócio do sistema.            |
+| Eduarda    | Desenvolvimento da interface textual (`UI`) e da apresentação das informações ao usuário.           |
+| Pedro      | Integração dos módulos e implementação do fluxo principal da aplicação (`Main`).                    |
+| Indaiá     | Documentação do projeto, testes e validação das funcionalidades implementadas.                      |
+
+</table>
+
+
+
 
 
 
