@@ -12,36 +12,46 @@ public class UI {
         System.out.printf("N° de Respostas: %d%n", comentario.getQuantidadeRespostas());
 
         System.out.println("=============================================================");
+        System.out.println("Respostas:");
+        mostrarRespostas(comentario,"     ");
 
-        // Comentários filhos diretos
-        if (comentario.getQuantidadeRespostas() > 0) {
-            System.out.println("Respostas diretas :");
-            for (Comentario filho : comentario.getRespostas()) {
-                System.out.printf("  -> " + filho);
+    }
+
+    private static void mostrarRespostas(Comentario comentario, String espaco){
+        if(comentario.getQuantidadeRespostas()>0){
+            for (int i = 0; i < comentario.getRespostas().size(); i++) {
+                Comentario filho = comentario.getRespostas().get(i);
+
+                String marcador =
+                        (i == comentario.getRespostas().size() - 1)
+                                ? "└── "
+                                : "├── ";
+
+                System.out.println(espaco + marcador + filho);
+
+                if (!filho.getRespostas().isEmpty()) {
+                    mostrarRespostas(filho, espaco + "│   ");
+                }
             }
-            System.out.println("=============================================================");
         }
     }
 
-    public static void exibirComentarios(LinkedList<Comentario> listaComentarios){
-        /*fazer algo semelhante a impressão de comentarios filhos. Fazer caso parametrro seja null e falar que esse
-        autor n existe*/
-
-    }
     public static void exibirConvrsaPrincipal(ComentarioTree ct){
         Comentario raiz=ct.getRaiz();
-        System.out.printf("Texto:%s%n", raiz.getTexto());
+        System.out.println( raiz.getTexto());
         System.out.printf("Total de comentarios do Forum: %d%n", 0/*ct.contarComentarios()*/);
         System.out.println("=============================================================");
         System.out.printf("N° de Comentarios: %d%n", raiz.getQuantidadeRespostas());
-        // Comentários filhos diretos
-        if (raiz.getQuantidadeRespostas() > 0) {
-            System.out.println("Comentarios :");
-            for (Comentario filho : raiz.getRespostas()) {
-                System.out.println("  -> " + filho);
-            }
-            System.out.println("=============================================================");
-        }
+
+        System.out.println("Comentarios :");
+        mostrarRespostas(raiz,"     ");
+
+    }
+
+    public static void exibirComentariosDoAutor(String nome, LinkedList<Comentario> listaComentarios){
+        /*fazer algo semelhante a impressão de comentarios filhos. Fazer caso parametrro seja null e falar que esse
+        autor n existe*/
+
     }
 
     public static void exibirMenu(){
@@ -90,7 +100,7 @@ public class UI {
 
     public static void exibirArvore(String arvoreTexto){
         System.out.println("=============================================================");
-        System.out.println("ESTRUTURA COMPLETA DA ÁRVORE DE DISCUSSÃO");
+        System.out.println("ESTRUTURA COMPLETA DA ÁRVORE DE COMENTARIOS");
         System.out.println("=============================================================");
         if (arvoreTexto == null || arvoreTexto.trim().isEmpty()) {
             System.out.println("(Árvore vazia)");

@@ -59,7 +59,7 @@ class ComentarioTree {
 
     public String obterCaminho(Comentario comentario) {
         if (comentario.getPai() == null) {
-            return "==CONVERSA PRINCIPAL==";
+            return "==CONVERSA PRINCIPAL ";
         }
 
         return obterCaminho(comentario.getPai())
@@ -97,11 +97,35 @@ class ComentarioTree {
             comentariosDoAutorRecursivo(filho, nomeDoAutor, resultado);
         }
     }
+
+
+    public String gerarArvoreTexto() {
+        StringBuilder sb = new StringBuilder();
+        sb.append("DISCUSSÃO\n");
+        gerarArvoreRecursivo(raiz, "", sb);
+        return sb.toString();
+    }
+
+    private void gerarArvoreRecursivo(Comentario atual, String prefixo, StringBuilder sb) {
+        List<Comentario> filhos = atual.getRespostas();
+        int total = filhos.size();
+
+        for (int i = 0; i < total; i++) {
+            Comentario filho = filhos.get(i);
+            boolean ehUltimo = (i == total - 1);
+
+            String conector = ehUltimo ? "└── " : "├── ";
+            sb.append(prefixo).append(conector).append(filho.getId()).append("\n");
+
+            String novoPrefixo = prefixo + (ehUltimo ? "    " : "│   ");
+            gerarArvoreRecursivo(filho, novoPrefixo, sb);
+        }
+    }
+
+
    /* public List<Comentario> listarFolhas();
 
     public int contarComentarios();
-
-    public String gerarArvoreTexto();
 
     public LinkedList<Comentario> comentariosDoAutor(String nomeDoAutor){
     //Deve guardar numa lista os comentarios do nome do autor passado no parametro, se n achar nenhum, retorna null
