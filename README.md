@@ -62,17 +62,19 @@ Ponto de entrada da aplicação.
 
 ## Comandos
 
-| Comando | Descrição                |
-| ------- | ------------------------ |
-| C       | Criar comentário         |
-| D       | Deletar comentário       |
-| E       | Editar comentário        |
-| V       | Visitar comentário filho |
-| B       | Voltar ao comentário pai |
-| F       | Mostrar folhas           |
-| A       | Mostrar árvore completa  |
-| M       | Mostrar menu             |
-
+| Comando | Descrição |
+|----------|------------|
+| C | Criar um novo comentário ou resposta ao comentário atual |
+| E | Editar o comentário atual |
+| D | Excluir o comentário atual |
+| V | Navegar para um comentário informando seu ID |
+| B | Retornar ao comentário pai |
+| B0 | Retornar à conversa principal |
+| F | Listar todos os comentários folha da árvore |
+| A | Exibir a estrutura completa da árvore de comentários |
+| U | Exibir todos os comentários de um autor |
+| M | Exibir o menu de comandos |
+| S | Encerrar o sistema |
 ## Equipe
 
 * Integrador/Scrum Master: Nome
