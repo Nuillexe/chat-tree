@@ -156,6 +156,7 @@ public class ForumService {
                 case "M":
                 case "U":
                 case "B0":
+                case "S":
                     return cmd;
 
                 default:
