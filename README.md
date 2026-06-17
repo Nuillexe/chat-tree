@@ -87,7 +87,7 @@ Ponto de entrada da aplicação.
 ## Novas tarefas:
 * Kaique: Atualizar menu, com base no swicth da main, fazer metodo exibirLIstaDeComentarios();
 * Charles: EditarComentario: Não permitir editar comentario raiz, em lerID(), colocar mengsaem: "Digitar Id"
-* Duda: ObterCaminho()-> GOstaria que retornasse n só o id, mas tbm o autor, tipo: id(<nomeDoAutor>)
+
 
 
   
