@@ -1,8 +1,3 @@
-
-## Novas tarefas:
-
-* Charles: EditarComentario: Não permitir editar comentario raiz, em lerID(), colocar mengsaem: "Digitar Id". Em lerId é importante diferenciar se a pessoa digitou um id invalido por ser n numero inteiro ou, msm se for inteiro, ele n existir
-
 # Fórum de Comentários em Árvore
 
 Projeto desenvolvido para a disciplina de Estrutura de Dados.
@@ -82,16 +77,18 @@ Ponto de entrada da aplicação.
 | S | Encerrar o sistema |
 
 
-## Divisão de Responsabilidades
+## Equipe e Divisão de Responsabilidades
 
-| Integrante | Responsabilidades                                                                                   |
-| ---------- | --------------------------------------------------------------------------------------------------- |
-| Kaique     | Implementação da estrutura de árvore (`ComentarioTree`) e operações de manipulação dos comentários. |
-| Charles    | Desenvolvimento da classe `Comentario`, incluindo atributos e comportamentos básicos da entidade.   |
-| Ana Clara  | Implementação da camada de serviços (`ForumService`) e das regras de negócio do sistema.            |
-| Eduarda    | Desenvolvimento da interface textual (`UI`) e da apresentação das informações ao usuário.           |
-| Pedro      | Integração dos módulos e implementação do fluxo principal da aplicação (`Main`).                    |
-| Indaiá     | Documentação do projeto, testes e validação das funcionalidades implementadas.                      |
+| Integrante                                | GitHub                      | Responsabilidades                                                                                                                                                                              |
+| ----------------------------------------- | --------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Ana Clara Marinho Viana                   | @anaclaramarinhoviana77-alt | Implementação da camada de serviços (`ForumService`) e das regras de negócio do sistema.                                                                                                       |
+| Charles Brendon Silva Suzart              | @CharlesBrendonIF           | Desenvolvimento da classe `Comentario`, incluindo atributos, comportamentos e representação dos comentários.                                                                                   |
+| Emanuel Fonseca Nogueira                  | @Nuillexe                   | Scrum Master e Gerente de Projeto, responsável pelo planejamento, organização das atividades, definição da arquitetura do sistema, integração dos módulos e acompanhamento do desenvolvimento. |
+| Kaique Santos Moreira                     | @KaiqueFullDev              | Implementação da estrutura de árvore (`ComentarioTree`) e das operações de manipulação dos comentários.                                                                                        |
+| Maria Eduarda De Oliveira Ferreira Santos | @eduardasxntos              | Desenvolvimento da interface textual (`UI`) e apresentação das informações ao usuário.                                                                                                         |
+
+</table>
+
 
 </table>
 
