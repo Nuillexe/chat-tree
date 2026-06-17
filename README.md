@@ -1,3 +1,8 @@
+
+## Novas tarefas:
+* Kaique: Atualizar menu, com base no swicth da main, fazer metodo exibirLIstaDeComentariosDoAutor();
+* Charles: EditarComentario: Não permitir editar comentario raiz, em lerID(), colocar mengsaem: "Digitar Id". Em lerId é importante diferenciar se a pessoa digitou um id invalido por ser n numero inteiro ou, msm se for inteiro, ele n existir
+
 # Fórum de Comentários em Árvore
 
 Projeto desenvolvido para a disciplina de Estrutura de Dados.
@@ -62,31 +67,36 @@ Ponto de entrada da aplicação.
 
 ## Comandos
 
-| Comando | Descrição                |
-| ------- | ------------------------ |
-| C       | Criar comentário         |
-| D       | Deletar comentário       |
-| E       | Editar comentário        |
-| V       | Visitar comentário filho |
-| B       | Voltar ao comentário pai |
-| F       | Mostrar folhas           |
-| A       | Mostrar árvore completa  |
-| M       | Mostrar menu             |
-
-## Equipe
-
-* Integrador/Scrum Master: Nome
-* Desenvolvedor 1
-* Desenvolvedor 2
-* Desenvolvedor 3
-* Desenvolvedor 4
-* Desenvolvedor 5
-* Desenvolvedor 6
+| Comando | Descrição |
+|----------|------------|
+| C | Criar um novo comentário ou resposta ao comentário atual |
+| E | Editar o comentário atual |
+| D | Excluir o comentário atual |
+| V | Navegar para um comentário informando seu ID |
+| B | Retornar ao comentário pai |
+| B0 | Retornar à conversa principal |
+| F | Listar todos os comentários folha da árvore |
+| A | Exibir a estrutura completa da árvore de comentários |
+| U | Exibir todos os comentários de um autor |
+| M | Exibir o menu de comandos |
+| S | Encerrar o sistema |
 
 
-## Novas tarefas:
-* Kaique: Atualizar menu, com base no swicth da main, fazer metodo exibirLIstaDeComentarios();
-* Charles: EditarComentario: Não permitir editar comentario raiz, em lerID(), colocar mengsaem: "Digitar Id"
+## Divisão de Responsabilidades
+
+| Integrante | Responsabilidades                                                                                   |
+| ---------- | --------------------------------------------------------------------------------------------------- |
+| Kaique     | Implementação da estrutura de árvore (`ComentarioTree`) e operações de manipulação dos comentários. |
+| Charles    | Desenvolvimento da classe `Comentario`, incluindo atributos e comportamentos básicos da entidade.   |
+| Ana Clara  | Implementação da camada de serviços (`ForumService`) e das regras de negócio do sistema.            |
+| Eduarda    | Desenvolvimento da interface textual (`UI`) e da apresentação das informações ao usuário.           |
+| Pedro      | Integração dos módulos e implementação do fluxo principal da aplicação (`Main`).                    |
+| Indaiá     | Documentação do projeto, testes e validação das funcionalidades implementadas.                      |
+
+</table>
+
+
+
 
 
 
